@@ -32,6 +32,5 @@ function draw() {
   fill("red");
   stroke("red");
   ellipse(x/2, x/6.5, 10, 30);
-
   
 }
