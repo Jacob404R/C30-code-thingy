@@ -12,11 +12,13 @@ function setup() {
 
 function draw() {
   background(220);
-  fill("red");
-  rect(width/4,height/4, 400, 400);
-  fill("white");
-  rect(width/4+400,height/4, 400, 400);
-  fill("blue");
-  circle(width/2, height/2, 100);
+  let x = width;
+  let y = height;
+  circle(x/2,y/8,100);
+  line(x/2, y/5.5, x/2, y/2);
+  triangle(x/2, y/2, 200, y -20, x - 200, y -20);
+  rect(x/4, y/4, (x/4)*2, 40);
+  rect(x/4,(y/4)+40, 40, 100);
+  rect(512,(y/4)+40, 40, 100);
 
 }
