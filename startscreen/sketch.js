@@ -42,12 +42,12 @@ function draw() {
     circle(x/2,y/8,50);
     fill("red");
     stroke("red");
-    ellipse(x/2, x/6.5, 10, 30);
+    ellipse(x/2, y/8, 10, 30);
     textSize(32);
     fill(255);
     stroke(0);
     strokeWeight(4);
-    text('thou shalt not touch thy button', width/4, height/13);
+    text('thou shalt not touch thy button', width/3.5, height/13);
 
   }
 }
