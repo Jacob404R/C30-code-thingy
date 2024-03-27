@@ -33,8 +33,12 @@ public class App {
 
         System.out.println("Decimal two = " + intTwo);
 
-        System.out.println("Your integers equal to " + (intOne + intTwo));
+        System.out.println("Adding your integers equal to " + (intOne + intTwo));
 
-        System.out.println("Your decimals equal to " + (dubone + dubTwo));
+        System.out.println("Adding your decimals equal to " + (dubone + dubTwo));
+
+        System.out.println("Subtracting your integers equal to " + (intOne - intTwo));
+
+        System.out.println("Subtracting your decimals equal to " + (dubone - dubTwo));
     }
 }
