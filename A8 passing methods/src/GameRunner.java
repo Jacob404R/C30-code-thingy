@@ -20,6 +20,7 @@ public class GameRunner {
         }
         else{
             System.out.println(":(");
+            animal.no();
         }
 
     }
