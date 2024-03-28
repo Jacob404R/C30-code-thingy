@@ -8,14 +8,15 @@ public class GameRunner {
         
         Integer input = keys.nextInt();
 
-        Game cat = new Game();
+        Game animal = new Game();
 
         if (input == 1) {
             System.out.println("ok");
-            cat.cat();
+            animal.cat();
         }
         else if (input == 2){
             System.out.println("ok");
+            animal.dawg();
         }
         else{
             System.out.println(":(");
