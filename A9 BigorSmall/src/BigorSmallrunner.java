@@ -27,6 +27,7 @@ public class BigorSmallrunner {
             }
             else {
                 System.out.println("That aint one of the options");
+                trigger = !trigger;
             }
         }
 
