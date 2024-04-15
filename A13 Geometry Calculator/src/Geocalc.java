@@ -16,18 +16,6 @@ public class Geocalc {
         System.out.println("The area of the circle is " + A + "units²");
     }
 
-    public void calc(int answer){
-        if (answer == 1){
-            rectPerimeter(answer, answer);
-        }
-        else if (answer == 2){
-            surfareaCube(answer);
-        }
-        else if (answer == 3){
-            areaCircle(answer);
-        }
-        else {
-            System.out.println("that wasn't an option");
-        }
-    }
+
+    
 }
