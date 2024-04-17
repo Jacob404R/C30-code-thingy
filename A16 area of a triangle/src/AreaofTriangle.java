@@ -5,6 +5,6 @@ public class AreaofTriangle {
          double perimeter = a + b + c; 
          double s = perimeter/2; 
          double area = Math.sqrt(s*((s-a)*(s-b)*(s-c)));
-         System.out.println("The area of the triangle is " + area + " units²");
+         System.out.println("The area of the triangle is " + String.format("%.5f", area) + " units²");
     }
 }
