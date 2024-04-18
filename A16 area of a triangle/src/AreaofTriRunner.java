@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class AreaofTriRunner {
     public static void main(String[] args) throws Exception {
         Scanner keys = new Scanner(System.in);
-        AreaofTriangle calc = new AreaofTriangle();
+
 
         System.out.println("Please enter side a: ");
         double a = keys.nextDouble();
@@ -13,6 +13,8 @@ public class AreaofTriRunner {
         System.out.println("Please enter side c: ");
         double c = keys.nextDouble();
 
-        calc.area(a, b, c);
+        AreaofTriangle calc = new AreaofTriangle();
+        calc.setSides(a, b, c);
+        calc.area();
     }
 }
