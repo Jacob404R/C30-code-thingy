@@ -6,7 +6,7 @@ public class RandomNums {
     int count = 1;
     int max;
     public void setMax(int z){
-        max = z+1;
+        max = z;
     }
     public void setNums(){
         a = Math.round(Math.random()*max);
