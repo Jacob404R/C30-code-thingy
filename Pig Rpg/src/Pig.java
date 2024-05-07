@@ -1,31 +1,31 @@
 import java.util.Scanner;
 
 public class Pig {
-    int playersum;
+    int playersum; // value for player's roll the entire game
     int pcsum;
     int diceroll;
+    int totalroll = 0; // value for player's roll sum in one round
 
     Scanner keys = new Scanner(System.in);
-    public void getResponse(){
 
-    }
     public int dice(){
-        diceroll = (int) (Math.round(1+Math.random()*5)); // dices from 1 to 6, 1 is the minimum; 6 (5+1) is max
+        diceroll = (int) (Math.round(1+ Math.random()*6)); // dices from 1 to 6
         return diceroll;
     }
     public void game(){
         int round = 1;
         print("Welcome to pig rpg. First to get to 100 wins. \nDuring your turn, you can roll as many times as you want \nIF it turns to 1, then nothing is added and your turn is forfeit \n");
-        while (playersum < 100 || pcsum < 100){
-            print("Round " + round + ".");
-            print("Computer: These are my rolls");
+        // instructions and welcom page
+        while (playersum < 100 || pcsum < 100){ // plays until a winner is called
+            print("Round " + round + "."); // counts the rounds
+            print("Computer: These are my rolls"); // computer round
             pcroll();
             print("This is my total");
             printint(pcsum);
             print("");
             print("Your turn.");
 
-            playerroll();
+            playerroll(); // player round
             print("This is your current total: ");
             printint(playersum);
             print("Here is the computer's total: ");
@@ -36,7 +36,7 @@ public class Pig {
         }
         print("The round has ended. \nThe winner is :");
 
-        if (playersum >= 100){
+        if (playersum >= 100){ // determines a winner
             print("YOU");
         }
         else{
@@ -44,15 +44,16 @@ public class Pig {
         }
 
     }
+
     public void playerroll(){
-        boolean trigger = true; // keeps player's round going
-        int x;
-        int totalroll = 0;
-        while (trigger && totalroll <100){
+    boolean trigger = true;
+ // keeps player's round going
+        int x = 0;
+        while (trigger|| playersum < 100){ // keeps player round going until they hit 100 or they roll a 1
             print("How many times do you want to roll?");
             x = keys.nextInt();
 
-            for (int i = 0; i <=x; i++){ // rolls the amount of times the player inputs
+            for (int i = 0; i <x; i++){ // rolls the amount of times the player inputs
                 int roll = dice();
   
 
@@ -62,8 +63,11 @@ public class Pig {
                 }
 
                 else{
+                    printint(roll);
+                    print("You rolled a 1! No points rewarded");
                     trigger = false;
                     totalroll = 0;
+                    i = x;
                 }
             }
             playersum = totalroll + playersum;
@@ -72,7 +76,7 @@ public class Pig {
             print("Roll again? (1) yes or (2) no");
             int trig = keys.nextInt();
 
-            if(trig == 2){                
+            if(trig == 2){                // trigger if player wants to keep going, ends round if they input anything else
                 trigger = false;
             }
 
