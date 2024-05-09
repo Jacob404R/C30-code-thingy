@@ -4,12 +4,13 @@ public class Pig {
     int playersum; // value for player's roll the entire game
     int pcsum;
     int diceroll;
-    int totalroll = 0; // value for player's roll sum in one round
+    int totalroll = 0; // value for player's roll sum in one loop
+    int currentroll = 0; // calculates current total for 1 for the whole round
 
     private static Scanner keys = new Scanner(System.in);
 
     public int dice(){
-        diceroll = (int) (Math.round(1+ Math.random()*6)); // dices from 1 to 6
+        diceroll = (int) (Math.round(1+ Math.random()*5)); // dices from 1 to 6
         return diceroll;
     }
     public void game(){
@@ -17,7 +18,7 @@ public class Pig {
         print("Welcome to pig rpg. First to get to 100 wins. Press enter for the next line. ");
         print("During your turn, you can roll as many times as you want"); 
         print("IF it turns to 1, then nothing is added and your turn is forfeit"); // instructions and welcome page
-        while (playersum < 100 || pcsum < 100){ // plays until a winner is called
+        while (playersum < 100 && pcsum < 100){ // plays until a winner is called
             print("Round " + round + "."); // counts the rounds
             print("Computer: These are my rolls"); // computer round
             pcroll();
@@ -47,8 +48,9 @@ public class Pig {
     boolean trigger = true;
  // keeps player's round going
         int x = 0;
+
         while (trigger && playersum < 100){ // keeps player round going until they hit 100 or they roll a 1
-            System.out.println("How many times do you want to roll?" );
+            System.out.println("\nHow many times do you want to roll?" );
             x = keys.nextInt();
             keys.nextLine();
 
@@ -60,23 +62,22 @@ public class Pig {
                 if (roll != 1){
                     printint(roll);
                     totalroll = totalroll+roll;
+                    currentroll = currentroll +roll;
                 }
 
                 else{
                     printint(roll);
-                    print("You rolled a 1! No points rewarded");
+                    print("You rolled a 1! No points rewarded for the entire round");
                     i = x;
-                    totalroll = 0;
+                    totalroll = currentroll*-1;
                     trigger = false;
+
 
 
                 }
             }
-            playersum = totalroll + playersum;
-            totalroll = 0; // resets total roll back to 0
 
-            print("This is your current total: " + playersum);
-            if (trigger){ //atops asking if the trigger is false
+            if (trigger && playersum<100){ //atops asking if the trigger is false
                   System.out.println ("Roll again? (1) yes or (2) no");
                    int trig = keys.nextInt();
 
@@ -91,6 +92,12 @@ public class Pig {
                  System.out.println("That was not an option, forfeiting turn");
                  trigger = false;
              }
+             
+             playersum = totalroll + playersum;
+
+             totalroll = 0; // resets total roll back to 0
+ 
+             print("\nThis is your current total: " + playersum);
         }
         }
 
