@@ -1,5 +1,9 @@
+import java.util.Scanner;
+
 public class ResponseRunner {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Scanner keys = new Scanner(System.in);
+        Response res = new Response();
+
     }
 }
