@@ -1,9 +1,10 @@
 Ball[] ballGroup;
 int pos = 0;
+int z = 100;
 
 void setup(){
     size(1400,700);
-    ballGroup = new Ball[50];
+    ballGroup = new Ball[z];
 }
 
 void draw(){
@@ -19,5 +20,6 @@ void mousePressed() {
     if (pos < ballGroup.length){
         ballGroup[pos] = new Ball(mouseX, mouseY, 100);
         pos++;
+        
     }
 }

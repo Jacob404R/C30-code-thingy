@@ -11,8 +11,8 @@ class Ball {
         cg = int( random(0, 255));
         cb = int( random(0, 255));
 
-        dx = 10;
-        dy = 10;
+        dx = int( random(-10,10));
+        dy = int( random(-10,10));
     }
 
     void display(){
