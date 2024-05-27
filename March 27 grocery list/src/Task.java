@@ -10,9 +10,9 @@ public class Task {
         print("How many items do you want to add?");
         int num = keys.nextInt();
 
-        for (int i = 0; i <= num; i++){
+        for (int i = 1; i <= num; i++){
             print("Please enter item: ");
-            String item = keys.nextLine();
+            String item = keys.next();
 
             groceryList.add(item);
         }
@@ -27,18 +27,18 @@ public class Task {
     public void editList(){
         print("How many items do you want to edtit?");
         int listnum = keys.nextInt();
-
-        for (int i = 0; i <= listnum; i++){
+        printList();
+        for (int i = 0; i < listnum; i++){
             print("Which item do you want to edit?");
 
-            printList();
+
     
             print("Please enter item number: ");
             int itemNum = keys.nextInt();
     
             print("Please enter new item: ");
     
-            String newItem = keys.nextLine();
+            String newItem = keys.next();
     
             groceryList.set(itemNum, newItem);
         }
@@ -47,7 +47,7 @@ public class Task {
 
     public static void printList(){
         for (int i = 0; i < groceryList.size(); i++){
-            print(i + ". " + groceryList.get(i));
+            print("Position" + i + "is item:  " + groceryList.get(i)); // 
         }
     }
 }
